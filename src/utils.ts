@@ -5,7 +5,7 @@ import { getPackageInfoSync } from 'local-pkg'
 import type { VueTemplateCompiler } from '@vue/component-compiler-utils/dist/types'
 import type { Options } from '.'
 
-export async function compileSvg(svg: string, path: string, options: Options): string {
+export async function compileSvg(svg: string, path: string, options: Options): Promise<string> {
   const version = options.vueVersion || detectVueVersion()
 
   if (version === 2) {

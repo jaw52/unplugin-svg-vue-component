@@ -2,14 +2,14 @@ import { basename } from 'node:path'
 import { compileTemplate as vue3CompileTemplate } from '@vue/compiler-sfc'
 import { compileTemplate as vue2CompileTemplate } from '@vue/component-compiler-utils'
 import { getPackageInfoSync } from 'local-pkg'
-import * as compiler from 'vue-template-compiler'
 import type { VueTemplateCompiler } from '@vue/component-compiler-utils/dist/types'
 import type { Options } from '.'
 
-export function compileSvg(svg: string, path: string, options: Options): string {
+export async function compileSvg(svg: string, path: string, options: Options): string {
   const version = options.vueVersion || detectVueVersion()
 
   if (version === 2) {
+    const compiler = await import('vue-template-compiler')
     const result = vue2CompileTemplate({
       compiler: compiler as VueTemplateCompiler,
       source: svg.replace('<svg', '<svg v-on="$listeners"'),

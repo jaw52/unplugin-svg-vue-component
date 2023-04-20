@@ -54,9 +54,6 @@
     "play:vue3": "pnpm run -C ./examples/vite-vue3 dev",
     "build:fix": "esno scripts/postbuild.ts"
   },
-  "peerDependencies": {
-    "vue": "^2.7.0 || 3"
-  },
   "dependencies": {
     "@rollup/pluginutils": "^5.0.2",
     "@vue/compiler-sfc": "^3.2.47",
@@ -67,8 +64,8 @@
     "vue-template-compiler": "^2.7.14"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.38.4",
-    "@types/node": "^18.15.11",
+    "@antfu/eslint-config": "^0.38.5",
+    "@types/node": "^18.15.12",
     "bumpp": "^9.1.0",
     "chalk": "^5.2.0",
     "eslint": "^8.38.0",
@@ -76,6 +73,6 @@
     "fast-glob": "^3.2.12",
     "tsup": "^6.7.0",
     "typescript": "^4.9.5",
-    "vite": "^4.2.1"
+    "vite": "^4.2.2"
   }
 }
